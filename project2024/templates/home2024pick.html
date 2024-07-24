@@ -11,6 +11,9 @@ body {text-align: center;}
 <body>
 <h1> Choose your artist</h1>
 <h2>
+	{% for artist in artists.values()%}
+	<a href="{{url_for('artist',name=artist['dbname'])}}"><button>{{artist["dbname"]}}</button></a>
+	{%endfor%}"]}})><
 <a href="/monte"><button>CM</button></a>
 
 

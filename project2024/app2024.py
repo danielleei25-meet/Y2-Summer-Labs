@@ -54,8 +54,9 @@ def signup2024():
 @app.route('/home2024pick', methods=["GET", "POST"])
 def home2024pick():
     if request.method == "GET":
-        
-        return render_template("home2024pick.html")
+        artists = db.get().val()
+        print(artists)
+        return render_template("home2024pick.html", artists=artists)
     else:
         login_session['user'] = None
         auth.current_user = None
@@ -63,6 +64,15 @@ def home2024pick():
 
 @app.route("/monte" , methods = ['GET', 'POST']) 
 def monte():
+    return render_template("monte.html")
+
+@app.route("/<string:name>" , methods = ['GET', 'POST']) 
+def artist(name):
+    for i in db.get().val().values():
+        if i["dbname"] == name:
+             return render_template("artist.html", name=name, description=i["dbD"], url=i["dbimage"]) 
+
+
     return render_template("monte.html") 
 
 @app.route("/add" , methods = ['GET', 'POST']) 

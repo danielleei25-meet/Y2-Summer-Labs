@@ -1,73 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Signup</title>
-</head>
+<html>
+
 <body>
-    <form method="post" action="/signup">
+<form> action="/signup" method="POST"
+<div> class="input-container">
+        <i class="fa fa-user icon"></i>
+        <input class="input-field" type="text" placeholder="Email" name="email">
+      </div>
 
 
-              <!-- Heading -->
-              <h4>
-                Create an account
-              </h4>
+</form>
 
-              <!-- Subheading -->
-              <p >
-                Please fill up your information below to sign up.
-              </p>
+<form>
+  <lanbel for="gmail">your gmail:</lanbel><br>
+  <input type="text" id="gmail" name="gmail"><br>
+  <label for="password"> your password:</label><br>
+  <input type="text" id="password" name="password">
+  <input type="submit" value="submit">
+</form>
+<a href="/signin" style="color:white">Already have an account? Log in!</a>
 
-              <!-- First Name -->
-              <div >
 
-                <!-- First Name -->
 
-              <!-- Email -->
-              <div >
 
-                <!-- Email -->
-                <label>Email address*</label>
-                <div>
-                  <input type="email"  name="email" id="emailStr" required>
-                  <div >
-
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Password -->
-              <div >
-
-                <!-- Name -->
-                <label>Password*</label>
-                <div class="input-group">
-                  <input type="password"  name="password" minlength="6">
-                  <div>
-
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Footer -->
-              <div >
-
-                <div >
-
-                  <!-- Button -->
-                  <div >
-                    <input type="submit"/>
-                  </div>
-
-                </div>
-              </div> <!-- / .form-row -->
-              <!-- Link -->
-
-              </div>
-    </form>
-    <br>
-        <a href="/"><button>signin</button></a>
 </body>
 </html>

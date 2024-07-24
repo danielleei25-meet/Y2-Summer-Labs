@@ -22,18 +22,6 @@ def login():
             error = "TRY AGAIN"
             return render_template("signin.html", error=error)
 
-@app.route('/home', methods=['GET', 'POST'])
-def home():
-    if request.method=="POST"
-        email= request.form['email']
-        password= request.form['password']
-
-        session['user']= auth.sign_in_with_email_and_password(email,password)
-        session['quotes']=[]
-        return render_template("home.html")
-    else:
-        return redirect(url_for("login"))
-
 
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
@@ -42,11 +30,8 @@ def signup():
     else: 
         email = request.form['email']
         password = request.form['password']
-
         try:
             login_session['user'] = auth.create_user_with_email_and_password(email, password)
-            quotes=[]
-            login session['quotes']
             print(login_session['user'])
             print(login_session['user']['localId'])
             return redirect(url_for('home'))
@@ -54,19 +39,9 @@ def signup():
             error = "TRY AGAIN"
             return render_template("signup.html",error=error)
 
-
-@app.route('/signin', methods=["GET", "POST"])
-def signup():
-    if request.method == 'GET':
-        return render_template("signin.html") 
-    else: 
-        email = request.form['email']
-        password = request.form['password']
-        
-
 @app.route('/signout')
 def signout():
-    login_session['user'] = None
+	login_session['user'] = None
 auth.current_user = None
 return redirect(url_for('signin'))
 

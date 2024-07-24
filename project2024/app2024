@@ -1,0 +1,9 @@
+from flask import Flask, render_template, request, redirect, url_for
+from flask import session as login_session 
+import pyrebase
+
+app = Flask(__name__)
+app.config['SECRET_KEY']="123456"
+
+firebase = pyrebase.initialize_app(Config) 
+auth = firebase.auth()

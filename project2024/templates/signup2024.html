@@ -2,23 +2,71 @@
 <html>
 <head>
 <style>
-h1 {text-align: center;}
-p {text-align: center;} 
-form {text-align: center;}
-body {text-align: center;} 
+  body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light background color */
+    color: #333; /* Dark text color for contrast */
+  }
+
+  h1 {
+    color: #5e2a8c; /* Purple color for the heading */
+    margin-bottom: 20px;
+    font-size: 2.5em;
+  }
+
+  p {
+    color: #6d28d9; /* Slightly lighter purple for the paragraph */
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between input fields */
+    margin: 0 auto;
+    max-width: 400px; /* Max width for the form */
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #6d28d9; /* Purple border */
+    border-radius: 5px;
+    font-size: 1em;
+  }
+
+  input[type="text"]::placeholder, input[type="password"]::placeholder {
+    color: #9b7eaa; /* Placeholder text color */
+  }
+
+  input[type="submit"] {
+    background-color: #5e2a8c; /* Purple background for the button */
+    color: white; /* White text color for the button */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+
+  input[type="submit"]:hover {
+    background-color: #6d28d9; /* Lighter purple when hovering */
+  }
 </style>
 </head>
 <body>
 
-<h1>Want to know more about your favourte artist</h1>
-<p>SIGN UP HERE</p> 
-<form action = "/signup2024" method="POST">
-
-<input type="text" id="Username" name="Username" placeholder="Enter your Username" >
-<input type="text" id="email" name="email" placeholder="Enter your email" >
-<input type="password"id="password" name="password"placeholder="Enter your Password" >
-<input type="submit" value="Sign Up!">
-
+<h1>Want to know more about your favourite artist?</h1>
+<p>SIGN UP HERE</p>
+<form action="/signup2024" method="POST">
+  <input type="text" id="Username" name="Username" placeholder="Enter your Username">
+  <input type="text" id="email" name="email" placeholder="Enter your email">
+  <input type="password" id="password" name="password" placeholder="Enter your Password">
+  <input type="submit" value="Sign Up!">
 </form>
 
 </body>

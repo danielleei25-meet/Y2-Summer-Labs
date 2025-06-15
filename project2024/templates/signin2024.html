@@ -4,7 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* Light background color */
+            color: #333; /* Dark text color for contrast */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; /* White background for the container */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        header h1 {
+            color: #5e2a8c; /* Purple color for the heading */
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between form elements */
+        }
+
+        label {
+            font-size: 1em;
+            color: #6d28d9; /* Purple color for labels */
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #6d28d9; /* Purple border */
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="email"]::placeholder, input[type="password"]::placeholder {
+            color: #9b7eaa; /* Placeholder text color */
+        }
+
+        button {
+            background-color: #5e2a8c; /* Purple background for the button */
+            color: white; /* White text color for the button */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        button:hover {
+            background-color: #6d28d9; /* Lighter purple when hovering */
+        }
+
+        .error {
+            color: #d9534f; /* Red color for error messages */
+            font-size: 1em;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        a {
+            color: #5e2a8c; /* Purple color for the link */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
 </head>
 <body>
     <div class="container">

@@ -5,15 +5,87 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>home</title>
 <style>
-body {text-align: center;}
+	/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Heading styles */
+h1 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: //127.0.0.1#007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional styling for specific elements */
+.button-container {
+    margin-top: 20px;
+}
 </style>
 </head>
+<div class="container">
+ 
+
+       
 <body>
 <h1> Choose your artist</h1>
 <h2>
 	{% for artist in artists.values()%}
 	<a href="{{url_for('artist',name=artist['dbname'])}}"><button>{{artist["dbname"]}}</button></a>
-	{%endfor%}"]}})><
+	{%endfor%}
 <a href="/monte"><button>CM</button></a>
 
 
@@ -21,10 +93,10 @@ body {text-align: center;}
 
 
 <a href = "/monte" width = "400"> 
+<br>
 <a href="add"><button>you don't see your favorite artist CLICK HERE </button></a>
 
 
-
-
+</div>
 </body>
 </html>

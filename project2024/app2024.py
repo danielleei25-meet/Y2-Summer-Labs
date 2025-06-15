@@ -28,28 +28,32 @@ def signin2024():
         password = request.form['password']
         try:
             user = auth.sign_in_with_email_and_password(email, password)
-            return redirect(url_for('home2024pick'))
+            return redirect(url_for('home2024pick', artists=db.get().val()))
         except Exception as e:
+
             print(e)
             error = "try again"
             return render_template("signin2024.html") 
 
 @app.route('/signup2024', methods=["GET", "POST"])
 def signup2024():
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render_template('signup2024.html')
+       
+    else:
         email = request.form['email']
         password = request.form['password']
+
         try:
             user= auth.create_user_with_email_and_password(email, password)
             login_session['user'] = user
             print(login_session['user'])
             print (user)
-            return redirect(url_for('home2024pick'))
+            return redirect('/home2024pick')
         except:
             error = "Womp it failed. Try again"
             return render_template("signup2024.html",error=error)
-    if request.method == "GET":
-        return render_template('signup2024.html')
+       
  
 @app.route('/home2024pick', methods=["GET", "POST"])
 def home2024pick():
@@ -60,7 +64,7 @@ def home2024pick():
     else:
         login_session['user'] = None
         auth.current_user = None
-        return redirect(url_for('signin2024.html'))
+        return redirect(url_for('signin2024'))
 
 @app.route("/monte" , methods = ['GET', 'POST']) 
 def monte():
@@ -88,5 +92,5 @@ def add():
 
 
 if __name__ == "__main__":
-    app.run(debug = True) 
+    app.run(debug = True,port = 5001) 
     
